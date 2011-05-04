@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B558FC5B1371A68F00A300D4 /* FullImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = B558FC5A1371A68F00A300D4 /* FullImageView.m */; };
 		B5BF0FDA136FCBE800C23233 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BF0FD9136FCBE800C23233 /* UIKit.framework */; };
 		B5BF0FDC136FCBE800C23233 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BF0FDB136FCBE800C23233 /* Foundation.framework */; };
 		B5BF0FDE136FCBE800C23233 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BF0FDD136FCBE800C23233 /* CoreGraphics.framework */; };
@@ -25,10 +26,11 @@
 		B5DF08F4136FE157001B340D /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DF08E9136FE157001B340D /* SBJsonStreamWriterState.m */; };
 		B5DF08F5136FE157001B340D /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DF08EB136FE157001B340D /* SBJsonTokeniser.m */; };
 		B5DF08F6136FE157001B340D /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DF08ED136FE157001B340D /* SBJsonWriter.m */; };
-		B5DF08FA136FE172001B340D /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DF08F9136FE172001B340D /* Photo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B558FC591371A68F00A300D4 /* FullImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullImageView.h; sourceTree = "<group>"; };
+		B558FC5A1371A68F00A300D4 /* FullImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullImageView.m; sourceTree = "<group>"; };
 		B5BF0FD5136FCBE800C23233 /* LomoPhotos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LomoPhotos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5BF0FD9136FCBE800C23233 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B5BF0FDB136FCBE800C23233 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -62,8 +64,6 @@
 		B5DF08EB136FE157001B340D /* SBJsonTokeniser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonTokeniser.m; sourceTree = "<group>"; };
 		B5DF08EC136FE157001B340D /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		B5DF08ED136FE157001B340D /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
-		B5DF08F8136FE172001B340D /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
-		B5DF08F9136FE172001B340D /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +119,8 @@
 				B5BF0FEF136FCBE800C23233 /* LomoPhotosViewController.m */,
 				B5BF0FF1136FCBE800C23233 /* LomoPhotosViewController.xib */,
 				B5BF0FE0136FCBE800C23233 /* Supporting Files */,
+				B558FC591371A68F00A300D4 /* FullImageView.h */,
+				B558FC5A1371A68F00A300D4 /* FullImageView.m */,
 			);
 			path = LomoPhotos;
 			sourceTree = "<group>";
@@ -163,8 +165,6 @@
 		B5DF08F7136FE160001B340D /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				B5DF08F8136FE172001B340D /* Photo.h */,
-				B5DF08F9136FE172001B340D /* Photo.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -241,7 +241,7 @@
 				B5DF08F4136FE157001B340D /* SBJsonStreamWriterState.m in Sources */,
 				B5DF08F5136FE157001B340D /* SBJsonTokeniser.m in Sources */,
 				B5DF08F6136FE157001B340D /* SBJsonWriter.m in Sources */,
-				B5DF08FA136FE172001B340D /* Photo.m in Sources */,
+				B558FC5B1371A68F00A300D4 /* FullImageView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

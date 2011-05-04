@@ -13,6 +13,8 @@
 
 NSString *const LomoApiKey = @"6b34051cbbbc9ed72ba14b8d31b395";
 
+@synthesize currentPhoto;
+
 -(void)loadPopularPhotos
 {
     // Build the string to call the Flickr API
@@ -53,12 +55,51 @@ NSString *const LomoApiKey = @"6b34051cbbbc9ed72ba14b8d31b395";
 
     for (NSDictionary *photo in photos)
     {
-        NSLog(@"PHOTO ID %@", [photo objectForKey:@"id"]);
+        //NSLog(@"PHOTO ID %@", [photo objectForKey:@"id"]);
         NSString *photoURLString = [[[photo objectForKey:@"assets"] objectForKey:@"large"] objectForKey:@"url"];
         
         //[photoURLsLargeImage addObject:[NSData dataWithContentsOfURL:[NSURL URLWithString:photoURLString]]];
         [photoURLsLargeImage addObject:[NSURL URLWithString:photoURLString]];
     }
+    
+    [self nextImage];
+}
+
+- (void)nextImage
+{
+    int value = [currentPhoto intValue];
+    currentPhoto = [NSNumber numberWithInt:value + 1];
+    [self performSelector:@selector(showZoomedImage:) withObject:currentPhoto afterDelay:0.1];
+}
+
+- (void)showZoomedImage:(NSNumber *)index
+{
+    NSLog(@"show photo at index %i", [index integerValue]);
+    // Remove from view (and release)
+    if ([fullImageViewController superview])
+        [fullImageViewController removeFromSuperview];
+
+    fullImageViewController = [[FullImageView alloc] initWithURL:[photoURLsLargeImage objectAtIndex:[index integerValue]]];
+    
+    [self.view addSubview:fullImageViewController];
+    
+    // Slide this view off screen
+    CGRect frame = fullImageViewController.frame;
+    
+    [UIView beginAnimations:nil context:NULL];
+    [UIView setAnimationDuration:.45];
+    
+    // Slide the image to its new location (onscreen)
+    frame.origin.x = 0;
+    fullImageViewController.frame = frame;
+    
+    [UIView commitAnimations];
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event 
+{
+    [self nextImage];
+    
 }
 
 - (void)dealloc
@@ -79,6 +120,10 @@ NSString *const LomoApiKey = @"6b34051cbbbc9ed72ba14b8d31b395";
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad
 {
+    [[self currentPhoto] initWithInt:-1];
+    photoLargeImageData = [[NSMutableArray alloc] init];
+    photoURLsLargeImage = [[NSMutableArray alloc] init];
+
     [self loadPopularPhotos];
     [super viewDidLoad];
 }
