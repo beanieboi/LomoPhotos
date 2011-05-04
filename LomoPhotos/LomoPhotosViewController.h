@@ -9,7 +9,11 @@
 #import <UIKit/UIKit.h>
 
 @interface LomoPhotosViewController : UIViewController {
-    
+    NSMutableArray  *photoTitles;         // Titles of images
+    UIImageView     *fullsizeImage;
+    NSMutableArray  *photoLargeImageData; // Image data
+    NSMutableArray  *photoURLsLargeImage; // URL to larger image
+    NSMutableData   *responseData;
 }
 
 @end
