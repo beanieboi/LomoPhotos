@@ -19,6 +19,8 @@
     FullImageView   *fullImageViewController;
 }
 
-@property (nonatomic) NSNumber* currentPhoto;
+- (void)prevImage;
+- (void)nextImage;
+@property (nonatomic, retain) NSNumber* currentPhoto;
 
 @end

@@ -72,6 +72,13 @@ NSString *const LomoApiKey = @"6b34051cbbbc9ed72ba14b8d31b395";
     [self performSelector:@selector(showZoomedImage:) withObject:currentPhoto afterDelay:0.1];
 }
 
+- (void)prevImage
+{
+    int value = [currentPhoto intValue];
+    currentPhoto = [NSNumber numberWithInt:value - 1];
+    [self performSelector:@selector(showZoomedImage:) withObject:currentPhoto afterDelay:0.1];
+}
+
 - (void)showZoomedImage:(NSNumber *)index
 {
     NSLog(@"show photo at index %i", [index integerValue]);
@@ -94,12 +101,6 @@ NSString *const LomoApiKey = @"6b34051cbbbc9ed72ba14b8d31b395";
     fullImageViewController.frame = frame;
     
     [UIView commitAnimations];
-}
-
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event 
-{
-    [self nextImage];
-    
 }
 
 - (void)dealloc

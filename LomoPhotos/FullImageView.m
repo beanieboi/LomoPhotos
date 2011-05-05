@@ -8,10 +8,6 @@
 
 #import "FullImageView.h"
 
-@interface FullImageView(private)
-- (void)slideViewOffScreen;
-@end
-
 @implementation FullImageView
 
 - (id)initWithFrame:(CGRect)frame
@@ -53,6 +49,18 @@
         NSData *imageData = [NSData dataWithContentsOfURL:url];
         fullsizeImage = [[UIImageView alloc] initWithImage:[UIImage imageWithData:imageData]];
 
+        UISwipeGestureRecognizer *recognizerLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self
+                                                                                     action:@selector(handleLeftSwipeFrom:)];
+        [recognizerLeft setDirection:(UISwipeGestureRecognizerDirectionLeft)];
+        [fullsizeImage addGestureRecognizer:recognizerLeft];
+        [recognizerLeft release];
+        
+        UISwipeGestureRecognizer *recognizerRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self
+                                                                                      action:@selector(handleRightSwipeFrom:)];
+        [recognizerRight setDirection:(UISwipeGestureRecognizerDirectionRight)];
+        [fullsizeImage addGestureRecognizer:recognizerRight];
+        [recognizerRight release];
+        
         [fullsizeImage setFrame:[[UIScreen mainScreen] bounds]];     
         fullsizeImage.userInteractionEnabled = YES;                                      
         [self addSubview:fullsizeImage];
@@ -65,15 +73,25 @@
 #pragma mark -
 #pragma mark Event Mgmt
 
+- (void)handleLeftSwipeFrom:(UISwipeGestureRecognizer *)recognizer {
+    [self.superview prevImage];
+    
+}
+
+- (void)handleRightSwipeFrom:(UISwipeGestureRecognizer *)recognizer {
+    [self.superview nextImage];
+}
+
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event 
 {
-    [self slideViewOffScreen];
-    
-    // We now send the same event up to the next responder
-    // (the JSONFlickrViewController) so we can show enable
-    // the search textfield again
-    [self.nextResponder touchesBegan:touches withEvent:event];
-    
+//    [self slideViewOffScreen];
+//
+//
+//    // We now send the same event up to the next responder
+//    // (the JSONFlickrViewController) so we can show enable
+//    // the search textfield again
+//    [self.nextResponder touchesBegan:touches withEvent:event];
+//    
 }
 
 #pragma mark -
