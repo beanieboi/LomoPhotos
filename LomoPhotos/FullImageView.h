@@ -13,7 +13,8 @@
     UIImageView *fullsizeImage;
 }
 
-- (void)slideViewOffScreen;
+- (void)slideViewOffScreenRight;
+- (void)slideViewOffScreenLeft;
 - (id)initWithURL:(NSURL *)url;
 
 @end

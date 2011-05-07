@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B54636DC1374A7870035B6E9 /* black-leather-texture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B54636DB1374A7870035B6E9 /* black-leather-texture.jpg */; };
 		B558FC5B1371A68F00A300D4 /* FullImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = B558FC5A1371A68F00A300D4 /* FullImageView.m */; };
+		B5B7024413753637004343A6 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B7024313753637004343A6 /* Photo.m */; };
 		B5BF0FDA136FCBE800C23233 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BF0FD9136FCBE800C23233 /* UIKit.framework */; };
 		B5BF0FDC136FCBE800C23233 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BF0FDB136FCBE800C23233 /* Foundation.framework */; };
 		B5BF0FDE136FCBE800C23233 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BF0FDD136FCBE800C23233 /* CoreGraphics.framework */; };
@@ -30,8 +32,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B54636DB1374A7870035B6E9 /* black-leather-texture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "black-leather-texture.jpg"; sourceTree = "<group>"; };
 		B558FC591371A68F00A300D4 /* FullImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullImageView.h; sourceTree = "<group>"; };
 		B558FC5A1371A68F00A300D4 /* FullImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullImageView.m; sourceTree = "<group>"; };
+		B5B7024213753637004343A6 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
+		B5B7024313753637004343A6 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
 		B5BF0FD5136FCBE800C23233 /* LomoPhotos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LomoPhotos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5BF0FD9136FCBE800C23233 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B5BF0FDB136FCBE800C23233 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -168,6 +173,8 @@
 		B5DF08F7136FE160001B340D /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				B5B7024213753637004343A6 /* Photo.h */,
+				B5B7024313753637004343A6 /* Photo.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -175,6 +182,7 @@
 		B5FB56291372F552001F3260 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				B54636DB1374A7870035B6E9 /* black-leather-texture.jpg */,
 				B5FB562B1372F5E9001F3260 /* gray-leather-texture.jpg */,
 			);
 			name = Assets;
@@ -231,6 +239,7 @@
 				B5BF0FED136FCBE800C23233 /* MainWindow.xib in Resources */,
 				B5BF0FF3136FCBE800C23233 /* LomoPhotosViewController.xib in Resources */,
 				B5FB562C1372F5E9001F3260 /* gray-leather-texture.jpg in Resources */,
+				B54636DC1374A7870035B6E9 /* black-leather-texture.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -254,6 +263,7 @@
 				B5DF08F5136FE157001B340D /* SBJsonTokeniser.m in Sources */,
 				B5DF08F6136FE157001B340D /* SBJsonWriter.m in Sources */,
 				B558FC5B1371A68F00A300D4 /* FullImageView.m in Sources */,
+				B5B7024413753637004343A6 /* Photo.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -15,12 +15,8 @@ NSString *const LomoApiKey = @"6b34051cbbbc9ed72ba14b8d31b395";
 
 @synthesize currentPhoto;
 
--(void)loadPopularPhotos
-{
-    // Build the string to call the Flickr API
-    NSString *urlString = 
-    [NSString stringWithFormat:
-     @"http://api.lomography.com/v1/photos/popular?api_key=%@", LomoApiKey];
+-(void)loadPopularPhotos {
+    NSString *urlString = [NSString stringWithFormat:@"http://api.lomography.com/v1/photos/popular?api_key=%@", LomoApiKey];
 
     // Create NSURL string from formatted string
     NSURL *url = [NSURL URLWithString:urlString];
@@ -53,92 +49,121 @@ NSString *const LomoApiKey = @"6b34051cbbbc9ed72ba14b8d31b395";
 	NSDictionary *results = [responseString JSONValue];
     NSArray *photos = [results objectForKey:@"photos"];
 
-    for (NSDictionary *photo in photos)
-    {
-        //NSLog(@"PHOTO ID %@", [photo objectForKey:@"id"]);
-        NSString *photoURLString = [[[photo objectForKey:@"assets"] objectForKey:@"large"] objectForKey:@"url"];
+    for (NSDictionary *photo in photos) {
         
-        //[photoURLsLargeImage addObject:[NSData dataWithContentsOfURL:[NSURL URLWithString:photoURLString]]];
         [photoURLsLargeImage addObject:[NSURL URLWithString:photoURLString]];
     }
     
     [self nextImage];
 }
 
-- (void)nextImage
-{
+- (void)loadImage:(NSNumber *)index {
+    NSURL *url = [photoURLsLargeImage objectAtIndex:[index intValue]];
+    NSData *imageData = [NSData dataWithContentsOfURL:url];
+    [photoLargeImageData insertObject:imageData atIndex:[index intValue]];
+}
+
+- (void)nextImage {
     int value = [currentPhoto intValue];
     currentPhoto = [NSNumber numberWithInt:value + 1];
-    [self performSelector:@selector(showZoomedImage:) withObject:currentPhoto afterDelay:0.1];
+    [self performSelector:@selector(showZoomedImage:) withObject:[NSArray arrayWithObjects:currentPhoto, @"right", nil] afterDelay:0.1];
 }
 
-- (void)prevImage
-{
+- (void)prevImage {
     int value = [currentPhoto intValue];
     currentPhoto = [NSNumber numberWithInt:value - 1];
-    [self performSelector:@selector(showZoomedImage:) withObject:currentPhoto afterDelay:0.1];
+    [self performSelector:@selector(showZoomedImage:) withObject:[NSArray arrayWithObjects:currentPhoto, @"left", nil] afterDelay:0.1];
 }
 
-- (void)showZoomedImage:(NSNumber *)index
-{
+- (void)showZoomedImage:(NSArray *)indexAndDirection {
+    NSNumber *index = [indexAndDirection objectAtIndex:0];
+    NSString *direction = [indexAndDirection objectAtIndex:1];
     NSLog(@"show photo at index %i", [index integerValue]);
     // Remove from view (and release)
-    if ([fullImageViewController superview])
-        [fullImageViewController removeFromSuperview];
+    if ([fullImageView superview])
+        [fullImageView removeFromSuperview];
 
-    fullImageViewController = [[FullImageView alloc] initWithURL:[photoURLsLargeImage objectAtIndex:[index integerValue]]];
-    
-    [self.view addSubview:fullImageViewController];
-    
+    fullImageView = [[FullImageView alloc] initWithURL:[photoURLsLargeImage objectAtIndex:[index integerValue]]];
+    [self.view addSubview:fullImageView];
+
     // Slide this view off screen
-    CGRect frame = fullImageViewController.frame;
-    
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDuration:.45];
-    
+
     // Slide the image to its new location (onscreen)
-    frame.origin.x = 0;
-    fullImageViewController.frame = frame;
-    
+    if ([direction isEqualToString:@"right"]) {
+        NSLog(@"FromRight");
+        CGRect frame = fullImageView.frame;
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationDuration:.45];
+        frame.origin.x = 0;
+        fullImageView.frame = frame;
+    } else {
+        NSLog(@"FromLeft");
+        CGRect frame = CGRectMake(-1024, 0, 1024, 768);
+        fullImageView.frame = frame;
+        [UIView beginAnimations:nil context:NULL];
+        [UIView setAnimationDuration:.45];
+        frame.origin.x = 0;
+        fullImageView.frame = frame;
+        
+    }
+
     [UIView commitAnimations];
 }
 
-- (void)dealloc
-{
+- (void)handleLeftSwipeFrom:(UISwipeGestureRecognizer *)recognizer {
+    [fullImageView slideViewOffScreenLeft];
+    [self nextImage];
+    NSLog(@"left");
+}
+
+- (void)handleRightSwipeFrom:(UISwipeGestureRecognizer *)recognizer {
+    [fullImageView slideViewOffScreenRight];
+    [self prevImage];
+    NSLog(@"right");
+}
+
+- (void)dealloc {
     [super dealloc];
 }
 
-- (void)didReceiveMemoryWarning
-{
+- (void)didReceiveMemoryWarning {
     // Releases the view if it doesn't have a superview.
     [super didReceiveMemoryWarning];
-    
+
     // Release any cached data, images, etc that aren't in use.
 }
 
 #pragma mark - View lifecycle
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad
-{
+- (void)viewDidLoad {
     [[self currentPhoto] initWithInt:-1];
     photoLargeImageData = [[NSMutableArray alloc] init];
     photoURLsLargeImage = [[NSMutableArray alloc] init];
-
+    
+    UISwipeGestureRecognizer *recognizerLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self
+                                                                                         action:@selector(handleLeftSwipeFrom:)];
+    [recognizerLeft setDirection:(UISwipeGestureRecognizerDirectionLeft)];
+    [self.view addGestureRecognizer:recognizerLeft];
+    [recognizerLeft release];
+    
+    UISwipeGestureRecognizer *recognizerRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self
+                                                                                          action:@selector(handleRightSwipeFrom:)];
+    [recognizerRight setDirection:(UISwipeGestureRecognizerDirectionRight)];
+    [self.view addGestureRecognizer:recognizerRight];
+    [recognizerRight release];
+    
     [self loadPopularPhotos];
     [super viewDidLoad];
 }
 
-
-- (void)viewDidUnload
-{
+- (void)viewDidUnload {
     [super viewDidUnload];
     // Release any retained subviews of the main view.
     // e.g. self.myOutlet = nil;
 }
 
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
+- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation {
     // Return YES for supported orientations
     return YES;
 }

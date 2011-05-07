@@ -16,11 +16,12 @@
     NSMutableArray  *photoURLsLargeImage; // URL to larger image
     NSMutableData   *responseData;
     NSNumber        *currentPhoto;
-    FullImageView   *fullImageViewController;
+    FullImageView   *fullImageView;
 }
 
 - (void)prevImage;
 - (void)nextImage;
+- (void)showZoomedImage:(NSArray *)indexAndDirection;
 @property (nonatomic, retain) NSNumber* currentPhoto;
 
 @end
