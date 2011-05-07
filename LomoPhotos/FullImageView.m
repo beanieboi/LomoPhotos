@@ -7,7 +7,7 @@
 //
 
 #import "FullImageView.h"
-
+#import "Photo.h"
 @implementation FullImageView
 
 - (id)initWithFrame:(CGRect)frame {
@@ -51,14 +51,13 @@
 #pragma mark -
 #pragma mark Initialization
 
-- (id)initWithURL:(NSURL *)url {
+- (id)initWithPhoto:(Photo *)photo {
     if (self = [super init]) {
         // Create the view offscreen (to the right)
         self.frame = CGRectMake(1024, 0, 1024, 768);
 
         // Setup image
-        NSData *imageData = [NSData dataWithContentsOfURL:url];
-        fullsizeImage = [[UIImageView alloc] initWithImage:[UIImage imageWithData:imageData]];
+        fullsizeImage = [[UIImageView alloc] initWithImage:[UIImage imageWithData:[photo imageDataOrLoad]]];
 
         [fullsizeImage setFrame:[[UIScreen mainScreen] bounds]];
         fullsizeImage.userInteractionEnabled = YES;

@@ -8,6 +8,7 @@
 
 #import "LomoPhotosViewController.h"
 #import "JSON.h"
+#import "Photo.h"
 
 @implementation LomoPhotosViewController
 
@@ -50,17 +51,10 @@ NSString *const LomoApiKey = @"6b34051cbbbc9ed72ba14b8d31b395";
     NSArray *photos = [results objectForKey:@"photos"];
 
     for (NSDictionary *photo in photos) {
-        
-        [photoURLsLargeImage addObject:[NSURL URLWithString:photoURLString]];
+        [photoList addObject:[[Photo alloc] initWithJSON:photo]];
     }
-    
-    [self nextImage];
-}
 
-- (void)loadImage:(NSNumber *)index {
-    NSURL *url = [photoURLsLargeImage objectAtIndex:[index intValue]];
-    NSData *imageData = [NSData dataWithContentsOfURL:url];
-    [photoLargeImageData insertObject:imageData atIndex:[index intValue]];
+    [self nextImage];
 }
 
 - (void)nextImage {
@@ -78,12 +72,14 @@ NSString *const LomoApiKey = @"6b34051cbbbc9ed72ba14b8d31b395";
 - (void)showZoomedImage:(NSArray *)indexAndDirection {
     NSNumber *index = [indexAndDirection objectAtIndex:0];
     NSString *direction = [indexAndDirection objectAtIndex:1];
+
     NSLog(@"show photo at index %i", [index integerValue]);
+
     // Remove from view (and release)
     if ([fullImageView superview])
         [fullImageView removeFromSuperview];
 
-    fullImageView = [[FullImageView alloc] initWithURL:[photoURLsLargeImage objectAtIndex:[index integerValue]]];
+    fullImageView = [[FullImageView alloc] initWithPhoto:[photoList objectAtIndex:[index integerValue]]];
     [self.view addSubview:fullImageView];
 
     // Slide this view off screen
@@ -138,8 +134,7 @@ NSString *const LomoApiKey = @"6b34051cbbbc9ed72ba14b8d31b395";
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
     [[self currentPhoto] initWithInt:-1];
-    photoLargeImageData = [[NSMutableArray alloc] init];
-    photoURLsLargeImage = [[NSMutableArray alloc] init];
+    photoList = [[NSMutableArray alloc] init];
     
     UISwipeGestureRecognizer *recognizerLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self
                                                                                          action:@selector(handleLeftSwipeFrom:)];

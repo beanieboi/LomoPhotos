@@ -12,8 +12,7 @@
 @interface LomoPhotosViewController : UIViewController {
     NSMutableArray  *photoTitles;         // Titles of images
     UIImageView     *fullsizeImage;
-    NSMutableArray  *photoLargeImageData; // Image data
-    NSMutableArray  *photoURLsLargeImage; // URL to larger image
+    NSMutableArray  *photoList; // URL to larger image
     NSMutableData   *responseData;
     NSNumber        *currentPhoto;
     FullImageView   *fullImageView;
@@ -22,6 +21,7 @@
 - (void)prevImage;
 - (void)nextImage;
 - (void)showZoomedImage:(NSArray *)indexAndDirection;
+
 @property (nonatomic, retain) NSNumber* currentPhoto;
 
 @end

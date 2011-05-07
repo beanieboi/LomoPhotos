@@ -10,18 +10,21 @@
 
 
 @interface Photo : NSObject {
-    BOOL        *imageLoaded;
-    NSData      *image;
-    NSURL       *url;
-    NSString    *title;
-    NSString    *camera;
-    NSString    *film;
+    BOOL            imageLoaded;
+    NSMutableData   *imageData;
+    NSString        *url;
+    NSString        *title;
+    NSString        *camera;
+    NSString        *film;
 }
 
-@property (nonatomic, retain) NSData* image;
-@property (nonatomic, retain) NSURL*    url;
-@property (nonatomic, retain) NSString* title;
-@property (nonatomic, retain) NSString* camera;
-@property (nonatomic, retain) NSString* film;
+@property (nonatomic)         BOOL              imageLoaded;
+@property (nonatomic, retain) NSMutableData*    imageData;
+@property (nonatomic, retain) NSString*            url;
+@property (nonatomic, retain) NSString*         title;
+@property (nonatomic, retain) NSString*         camera;
+@property (nonatomic, retain) NSString*         film;
 
+- (id)initWithJSON:(NSDictionary *)json;
+- (NSMutableData* )imageDataOrLoad;
 @end
