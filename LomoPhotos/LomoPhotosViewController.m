@@ -8,6 +8,7 @@
 
 #import "LomoPhotosViewController.h"
 #import "PhotosViewController.h"
+#import "MapViewController.h"
 
 @implementation LomoPhotosViewController
 
@@ -37,6 +38,8 @@
 }
 
 - (IBAction)doNearbyPhotos {
+    MapViewController *map = [[MapViewController alloc] init];
+    [self.view addSubview:map.view];
 }
 
 

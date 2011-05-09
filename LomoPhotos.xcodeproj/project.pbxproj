@@ -11,6 +11,7 @@
 		B558FC5B1371A68F00A300D4 /* FullImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = B558FC5A1371A68F00A300D4 /* FullImageView.m */; };
 		B57F719A137826CD00B80A59 /* PhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B57F7198137826CD00B80A59 /* PhotosViewController.m */; };
 		B57F719B137826CD00B80A59 /* PhotosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B57F7199137826CD00B80A59 /* PhotosViewController.xib */; };
+		B5A676B313783FDA00803142 /* LomoApi.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A676B213783FDA00803142 /* LomoApi.m */; };
 		B5B7024413753637004343A6 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B7024313753637004343A6 /* Photo.m */; };
 		B5BF0FDA136FCBE800C23233 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BF0FD9136FCBE800C23233 /* UIKit.framework */; };
 		B5BF0FDC136FCBE800C23233 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BF0FDB136FCBE800C23233 /* Foundation.framework */; };
@@ -33,6 +34,9 @@
 		B5FB562C1372F5E9001F3260 /* gray-leather-texture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B5FB562B1372F5E9001F3260 /* gray-leather-texture.jpg */; };
 		B5FEE2F213782D490006AF4A /* vienna.png in Resources */ = {isa = PBXBuildFile; fileRef = B5FEE2F113782D490006AF4A /* vienna.png */; };
 		B5FEE2F513782D870006AF4A /* popular.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B5FEE2F413782D870006AF4A /* popular.jpg */; };
+		B5FEE300137832D80006AF4A /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5FEE2FE137832D80006AF4A /* MapViewController.m */; };
+		B5FEE301137832D80006AF4A /* MapViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5FEE2FF137832D80006AF4A /* MapViewController.xib */; };
+		B5FEE303137833840006AF4A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5FEE302137833840006AF4A /* MapKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +46,8 @@
 		B57F7197137826CD00B80A59 /* PhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosViewController.h; sourceTree = "<group>"; };
 		B57F7198137826CD00B80A59 /* PhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosViewController.m; sourceTree = "<group>"; };
 		B57F7199137826CD00B80A59 /* PhotosViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotosViewController.xib; sourceTree = "<group>"; };
+		B5A676B113783FDA00803142 /* LomoApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LomoApi.h; sourceTree = "<group>"; };
+		B5A676B213783FDA00803142 /* LomoApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LomoApi.m; sourceTree = "<group>"; };
 		B5B7024213753637004343A6 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
 		B5B7024313753637004343A6 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
 		B5BF0FD5136FCBE800C23233 /* LomoPhotos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LomoPhotos.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,6 +86,10 @@
 		B5FB562B1372F5E9001F3260 /* gray-leather-texture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "gray-leather-texture.jpg"; sourceTree = "<group>"; };
 		B5FEE2F113782D490006AF4A /* vienna.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vienna.png; sourceTree = "<group>"; };
 		B5FEE2F413782D870006AF4A /* popular.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = popular.jpg; sourceTree = "<group>"; };
+		B5FEE2FD137832D80006AF4A /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		B5FEE2FE137832D80006AF4A /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		B5FEE2FF137832D80006AF4A /* MapViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MapViewController.xib; sourceTree = "<group>"; };
+		B5FEE302137833840006AF4A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +97,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B5FEE303137833840006AF4A /* MapKit.framework in Frameworks */,
 				B5BF0FDA136FCBE800C23233 /* UIKit.framework in Frameworks */,
 				B5BF0FDC136FCBE800C23233 /* Foundation.framework in Frameworks */,
 				B5BF0FDE136FCBE800C23233 /* CoreGraphics.framework in Frameworks */,
@@ -99,21 +110,28 @@
 		B57F718E1378265F00B80A59 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B5FEE2F71378328F0006AF4A /* Sections */,
+				B5FEE2F6137832860006AF4A /* Detail */,
 				B5BF0FEE136FCBE800C23233 /* LomoPhotosViewController.h */,
 				B5BF0FEF136FCBE800C23233 /* LomoPhotosViewController.m */,
 				B5BF0FF1136FCBE800C23233 /* LomoPhotosViewController.xib */,
-				B558FC591371A68F00A300D4 /* FullImageView.h */,
-				B558FC5A1371A68F00A300D4 /* FullImageView.m */,
-				B57F7197137826CD00B80A59 /* PhotosViewController.h */,
-				B57F7198137826CD00B80A59 /* PhotosViewController.m */,
-				B57F7199137826CD00B80A59 /* PhotosViewController.xib */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		B5A676B013783F6700803142 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				B5A676B113783FDA00803142 /* LomoApi.h */,
+				B5A676B213783FDA00803142 /* LomoApi.m */,
+			);
+			name = API;
 			sourceTree = "<group>";
 		};
 		B5BF0FCA136FCBE800C23233 = {
 			isa = PBXGroup;
 			children = (
+				B5FEE302137833840006AF4A /* MapKit.framework */,
 				B5BF0FDF136FCBE800C23233 /* LomoPhotos */,
 				B5BF0FD8136FCBE800C23233 /* Frameworks */,
 				B5BF0FD6136FCBE800C23233 /* Products */,
@@ -141,6 +159,7 @@
 		B5BF0FDF136FCBE800C23233 /* LomoPhotos */ = {
 			isa = PBXGroup;
 			children = (
+				B5A676B013783F6700803142 /* API */,
 				B57F718E1378265F00B80A59 /* Views */,
 				B5FB56291372F552001F3260 /* Assets */,
 				B5DF08F7136FE160001B340D /* Classes */,
@@ -210,6 +229,28 @@
 			name = Assets;
 			sourceTree = "<group>";
 		};
+		B5FEE2F6137832860006AF4A /* Detail */ = {
+			isa = PBXGroup;
+			children = (
+				B558FC591371A68F00A300D4 /* FullImageView.h */,
+				B558FC5A1371A68F00A300D4 /* FullImageView.m */,
+			);
+			name = Detail;
+			sourceTree = "<group>";
+		};
+		B5FEE2F71378328F0006AF4A /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				B57F7197137826CD00B80A59 /* PhotosViewController.h */,
+				B57F7198137826CD00B80A59 /* PhotosViewController.m */,
+				B57F7199137826CD00B80A59 /* PhotosViewController.xib */,
+				B5FEE2FD137832D80006AF4A /* MapViewController.h */,
+				B5FEE2FE137832D80006AF4A /* MapViewController.m */,
+				B5FEE2FF137832D80006AF4A /* MapViewController.xib */,
+			);
+			name = Sections;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -265,6 +306,7 @@
 				B57F719B137826CD00B80A59 /* PhotosViewController.xib in Resources */,
 				B5FEE2F213782D490006AF4A /* vienna.png in Resources */,
 				B5FEE2F513782D870006AF4A /* popular.jpg in Resources */,
+				B5FEE301137832D80006AF4A /* MapViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,6 +332,8 @@
 				B558FC5B1371A68F00A300D4 /* FullImageView.m in Sources */,
 				B5B7024413753637004343A6 /* Photo.m in Sources */,
 				B57F719A137826CD00B80A59 /* PhotosViewController.m in Sources */,
+				B5FEE300137832D80006AF4A /* MapViewController.m in Sources */,
+				B5A676B313783FDA00803142 /* LomoApi.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
