@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		B54636DC1374A7870035B6E9 /* black-leather-texture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B54636DB1374A7870035B6E9 /* black-leather-texture.jpg */; };
 		B558FC5B1371A68F00A300D4 /* FullImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = B558FC5A1371A68F00A300D4 /* FullImageView.m */; };
+		B57F719A137826CD00B80A59 /* PhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B57F7198137826CD00B80A59 /* PhotosViewController.m */; };
+		B57F719B137826CD00B80A59 /* PhotosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B57F7199137826CD00B80A59 /* PhotosViewController.xib */; };
 		B5B7024413753637004343A6 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B7024313753637004343A6 /* Photo.m */; };
 		B5BF0FDA136FCBE800C23233 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BF0FD9136FCBE800C23233 /* UIKit.framework */; };
 		B5BF0FDC136FCBE800C23233 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BF0FDB136FCBE800C23233 /* Foundation.framework */; };
@@ -29,12 +31,17 @@
 		B5DF08F5136FE157001B340D /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DF08EB136FE157001B340D /* SBJsonTokeniser.m */; };
 		B5DF08F6136FE157001B340D /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DF08ED136FE157001B340D /* SBJsonWriter.m */; };
 		B5FB562C1372F5E9001F3260 /* gray-leather-texture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B5FB562B1372F5E9001F3260 /* gray-leather-texture.jpg */; };
+		B5FEE2F213782D490006AF4A /* vienna.png in Resources */ = {isa = PBXBuildFile; fileRef = B5FEE2F113782D490006AF4A /* vienna.png */; };
+		B5FEE2F513782D870006AF4A /* popular.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B5FEE2F413782D870006AF4A /* popular.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B54636DB1374A7870035B6E9 /* black-leather-texture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "black-leather-texture.jpg"; sourceTree = "<group>"; };
 		B558FC591371A68F00A300D4 /* FullImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullImageView.h; sourceTree = "<group>"; };
 		B558FC5A1371A68F00A300D4 /* FullImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullImageView.m; sourceTree = "<group>"; };
+		B57F7197137826CD00B80A59 /* PhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosViewController.h; sourceTree = "<group>"; };
+		B57F7198137826CD00B80A59 /* PhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosViewController.m; sourceTree = "<group>"; };
+		B57F7199137826CD00B80A59 /* PhotosViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotosViewController.xib; sourceTree = "<group>"; };
 		B5B7024213753637004343A6 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
 		B5B7024313753637004343A6 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
 		B5BF0FD5136FCBE800C23233 /* LomoPhotos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LomoPhotos.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -71,6 +78,8 @@
 		B5DF08EC136FE157001B340D /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
 		B5DF08ED136FE157001B340D /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		B5FB562B1372F5E9001F3260 /* gray-leather-texture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "gray-leather-texture.jpg"; sourceTree = "<group>"; };
+		B5FEE2F113782D490006AF4A /* vienna.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vienna.png; sourceTree = "<group>"; };
+		B5FEE2F413782D870006AF4A /* popular.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = popular.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +96,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		B57F718E1378265F00B80A59 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				B5BF0FEE136FCBE800C23233 /* LomoPhotosViewController.h */,
+				B5BF0FEF136FCBE800C23233 /* LomoPhotosViewController.m */,
+				B5BF0FF1136FCBE800C23233 /* LomoPhotosViewController.xib */,
+				B558FC591371A68F00A300D4 /* FullImageView.h */,
+				B558FC5A1371A68F00A300D4 /* FullImageView.m */,
+				B57F7197137826CD00B80A59 /* PhotosViewController.h */,
+				B57F7198137826CD00B80A59 /* PhotosViewController.m */,
+				B57F7199137826CD00B80A59 /* PhotosViewController.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		B5BF0FCA136FCBE800C23233 = {
 			isa = PBXGroup;
 			children = (
@@ -117,18 +141,14 @@
 		B5BF0FDF136FCBE800C23233 /* LomoPhotos */ = {
 			isa = PBXGroup;
 			children = (
+				B57F718E1378265F00B80A59 /* Views */,
 				B5FB56291372F552001F3260 /* Assets */,
 				B5DF08F7136FE160001B340D /* Classes */,
 				B5DF08D9136FE14C001B340D /* JSON */,
 				B5BF0FE8136FCBE800C23233 /* LomoPhotosAppDelegate.h */,
 				B5BF0FE9136FCBE800C23233 /* LomoPhotosAppDelegate.m */,
 				B5BF0FEB136FCBE800C23233 /* MainWindow.xib */,
-				B5BF0FEE136FCBE800C23233 /* LomoPhotosViewController.h */,
-				B5BF0FEF136FCBE800C23233 /* LomoPhotosViewController.m */,
-				B5BF0FF1136FCBE800C23233 /* LomoPhotosViewController.xib */,
 				B5BF0FE0136FCBE800C23233 /* Supporting Files */,
-				B558FC591371A68F00A300D4 /* FullImageView.h */,
-				B558FC5A1371A68F00A300D4 /* FullImageView.m */,
 			);
 			path = LomoPhotos;
 			sourceTree = "<group>";
@@ -182,6 +202,8 @@
 		B5FB56291372F552001F3260 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				B5FEE2F413782D870006AF4A /* popular.jpg */,
+				B5FEE2F113782D490006AF4A /* vienna.png */,
 				B54636DB1374A7870035B6E9 /* black-leather-texture.jpg */,
 				B5FB562B1372F5E9001F3260 /* gray-leather-texture.jpg */,
 			);
@@ -240,6 +262,9 @@
 				B5BF0FF3136FCBE800C23233 /* LomoPhotosViewController.xib in Resources */,
 				B5FB562C1372F5E9001F3260 /* gray-leather-texture.jpg in Resources */,
 				B54636DC1374A7870035B6E9 /* black-leather-texture.jpg in Resources */,
+				B57F719B137826CD00B80A59 /* PhotosViewController.xib in Resources */,
+				B5FEE2F213782D490006AF4A /* vienna.png in Resources */,
+				B5FEE2F513782D870006AF4A /* popular.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +289,7 @@
 				B5DF08F6136FE157001B340D /* SBJsonWriter.m in Sources */,
 				B558FC5B1371A68F00A300D4 /* FullImageView.m in Sources */,
 				B5B7024413753637004343A6 /* Photo.m in Sources */,
+				B57F719A137826CD00B80A59 /* PhotosViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

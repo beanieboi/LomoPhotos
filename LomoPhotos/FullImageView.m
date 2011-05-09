@@ -3,7 +3,7 @@
 //  LomoPhotos
 //
 //  Created by ben on 04.05.11.
-//  Copyright 2011 innomind. All rights reserved.
+//  Copyright 2011. All rights reserved.
 //
 
 #import "FullImageView.h"

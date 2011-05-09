@@ -3,25 +3,19 @@
 //  LomoPhotos
 //
 //  Created by ben on 5/3/11.
-//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//  Copyright 2011. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import "FullImageView.h"
 
 @interface LomoPhotosViewController : UIViewController {
-    NSMutableArray  *photoTitles;         // Titles of images
-    UIImageView     *fullsizeImage;
-    NSMutableArray  *photoList; // URL to larger image
-    NSMutableData   *responseData;
-    NSNumber        *currentPhoto;
-    FullImageView   *fullImageView;
+    UIButton *popularPhotos;
+    UIButton *nearbyPhotos;
 }
 
-- (void)prevImage;
-- (void)nextImage;
-- (void)showZoomedImage:(NSArray *)indexAndDirection;
+@property (nonatomic, retain) IBOutlet UIButton *popularPhotos;
+@property (nonatomic, retain) IBOutlet UIButton *nearbyPhotos;
 
-@property (nonatomic, retain) NSNumber* currentPhoto;
-
+- (IBAction)doPopularPhotos;
+- (IBAction)doNearbyPhotos;
 @end
