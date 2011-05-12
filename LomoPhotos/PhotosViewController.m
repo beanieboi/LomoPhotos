@@ -9,19 +9,19 @@
 #import "PhotosViewController.h"
 #import "JSON.h"
 #import "Photo.h"
+#import "Constants.h"
 
 @implementation PhotosViewController
 
-NSString *const LomoApiKey = @"6b34051cbbbc9ed72ba14b8d31b395";
-
 @synthesize currentPhoto;
 
+#pragma mark - HTTP Stuff
 -(void)loadPopularPhotos {
     NSString *urlString = [NSString stringWithFormat:@"http://api.lomography.com/v1/photos/popular?api_key=%@", LomoApiKey];
     
     // Create NSURL string from formatted string
     NSURL *url = [NSURL URLWithString:urlString];
-    
+
     NSLog(@"loading %@", urlString);
     // Setup and start async download
     responseData = [[NSMutableData data] retain];
@@ -57,6 +57,7 @@ NSString *const LomoApiKey = @"6b34051cbbbc9ed72ba14b8d31b395";
     [self nextImage];
 }
 
+#pragma mark - Image handling
 - (void)nextImage {
     int value = [currentPhoto intValue];
     currentPhoto = [NSNumber numberWithInt:value + 1];
@@ -106,6 +107,7 @@ NSString *const LomoApiKey = @"6b34051cbbbc9ed72ba14b8d31b395";
     [UIView commitAnimations];
 }
 
+#pragma mark - Swipe
 - (void)handleLeftSwipeFrom:(UISwipeGestureRecognizer *)recognizer {
     [fullImageView slideViewOffScreenLeft];
     [self nextImage];
@@ -118,7 +120,7 @@ NSString *const LomoApiKey = @"6b34051cbbbc9ed72ba14b8d31b395";
     NSLog(@"right");
 }
 
-
+#pragma mark - Init
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];

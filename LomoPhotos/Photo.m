@@ -7,6 +7,7 @@
 //
 
 #import "Photo.h"
+#import <CoreLocation/CoreLocation.h>
 
 @implementation Photo
 
@@ -16,12 +17,18 @@
 @synthesize title;
 @synthesize camera;
 @synthesize film;
+@synthesize coordinate;
 
 - (id)initWithJSON:(NSDictionary *)json {
     if (self = [super init]) {
         self.url = [[[json objectForKey:@"assets"] objectForKey:@"large"] objectForKey:@"url"];
         self.imageLoaded = false;
         self.imageData = [[NSMutableData data] retain];
+
+        NSString *stringLatitude = [[json objectForKey:@"location"] objectForKey:@"latitude"];
+        NSString *stringLongitude = [[json objectForKey:@"location"] objectForKey:@"longitude"];
+
+        self.coordinate = [[CLLocation alloc] initWithLatitude:[stringLatitude doubleValue] longitude:[stringLongitude doubleValue]];
     }
     return self;  
 }

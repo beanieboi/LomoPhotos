@@ -11,7 +11,7 @@
 @class LomoPhotosViewController;
 
 @interface LomoPhotosAppDelegate : NSObject <UIApplicationDelegate> {
-
+    
 }
 
 @property (nonatomic, retain) IBOutlet UIWindow *window;

@@ -11,8 +11,12 @@
 		B558FC5B1371A68F00A300D4 /* FullImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = B558FC5A1371A68F00A300D4 /* FullImageView.m */; };
 		B57F719A137826CD00B80A59 /* PhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B57F7198137826CD00B80A59 /* PhotosViewController.m */; };
 		B57F719B137826CD00B80A59 /* PhotosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B57F7199137826CD00B80A59 /* PhotosViewController.xib */; };
+		B58E317B137B27CA00F1F82E /* MapAnnotation.m in Sources */ = {isa = PBXBuildFile; fileRef = B58E317A137B27CA00F1F82E /* MapAnnotation.m */; };
+		B58E317D137B2E2A00F1F82E /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B58E317C137B2E2A00F1F82E /* CoreLocation.framework */; };
+		B58E317F137B329500F1F82E /* spinner360_frontal_72x72.png in Resources */ = {isa = PBXBuildFile; fileRef = B58E317E137B329500F1F82E /* spinner360_frontal_72x72.png */; };
 		B5A676B313783FDA00803142 /* LomoApi.m in Sources */ = {isa = PBXBuildFile; fileRef = B5A676B213783FDA00803142 /* LomoApi.m */; };
 		B5B7024413753637004343A6 /* Photo.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B7024313753637004343A6 /* Photo.m */; };
+		B5B7024D1379C649004343A6 /* Constants.m in Sources */ = {isa = PBXBuildFile; fileRef = B5B7024C1379C649004343A6 /* Constants.m */; };
 		B5BF0FDA136FCBE800C23233 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BF0FD9136FCBE800C23233 /* UIKit.framework */; };
 		B5BF0FDC136FCBE800C23233 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BF0FDB136FCBE800C23233 /* Foundation.framework */; };
 		B5BF0FDE136FCBE800C23233 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5BF0FDD136FCBE800C23233 /* CoreGraphics.framework */; };
@@ -46,10 +50,16 @@
 		B57F7197137826CD00B80A59 /* PhotosViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PhotosViewController.h; sourceTree = "<group>"; };
 		B57F7198137826CD00B80A59 /* PhotosViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PhotosViewController.m; sourceTree = "<group>"; };
 		B57F7199137826CD00B80A59 /* PhotosViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PhotosViewController.xib; sourceTree = "<group>"; };
+		B58E3179137B27CA00F1F82E /* MapAnnotation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapAnnotation.h; sourceTree = "<group>"; };
+		B58E317A137B27CA00F1F82E /* MapAnnotation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapAnnotation.m; sourceTree = "<group>"; };
+		B58E317C137B2E2A00F1F82E /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		B58E317E137B329500F1F82E /* spinner360_frontal_72x72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = spinner360_frontal_72x72.png; path = ../spinner360_frontal_72x72.png; sourceTree = "<group>"; };
 		B5A676B113783FDA00803142 /* LomoApi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LomoApi.h; sourceTree = "<group>"; };
 		B5A676B213783FDA00803142 /* LomoApi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LomoApi.m; sourceTree = "<group>"; };
 		B5B7024213753637004343A6 /* Photo.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Photo.h; sourceTree = "<group>"; };
 		B5B7024313753637004343A6 /* Photo.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Photo.m; sourceTree = "<group>"; };
+		B5B7024B1379C649004343A6 /* Constants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Constants.h; sourceTree = "<group>"; };
+		B5B7024C1379C649004343A6 /* Constants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Constants.m; sourceTree = "<group>"; };
 		B5BF0FD5136FCBE800C23233 /* LomoPhotos.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LomoPhotos.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5BF0FD9136FCBE800C23233 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		B5BF0FDB136FCBE800C23233 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -97,6 +107,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B58E317D137B2E2A00F1F82E /* CoreLocation.framework in Frameworks */,
 				B5FEE303137833840006AF4A /* MapKit.framework in Frameworks */,
 				B5BF0FDA136FCBE800C23233 /* UIKit.framework in Frameworks */,
 				B5BF0FDC136FCBE800C23233 /* Foundation.framework in Frameworks */,
@@ -110,13 +121,22 @@
 		B57F718E1378265F00B80A59 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				B5FEE2F71378328F0006AF4A /* Sections */,
 				B5FEE2F6137832860006AF4A /* Detail */,
+				B5FEE2F71378328F0006AF4A /* Sections */,
 				B5BF0FEE136FCBE800C23233 /* LomoPhotosViewController.h */,
 				B5BF0FEF136FCBE800C23233 /* LomoPhotosViewController.m */,
 				B5BF0FF1136FCBE800C23233 /* LomoPhotosViewController.xib */,
 			);
 			name = Views;
+			sourceTree = "<group>";
+		};
+		B58E3177137B27B500F1F82E /* Map */ = {
+			isa = PBXGroup;
+			children = (
+				B58E3179137B27CA00F1F82E /* MapAnnotation.h */,
+				B58E317A137B27CA00F1F82E /* MapAnnotation.m */,
+			);
+			name = Map;
 			sourceTree = "<group>";
 		};
 		B5A676B013783F6700803142 /* API */ = {
@@ -131,7 +151,6 @@
 		B5BF0FCA136FCBE800C23233 = {
 			isa = PBXGroup;
 			children = (
-				B5FEE302137833840006AF4A /* MapKit.framework */,
 				B5BF0FDF136FCBE800C23233 /* LomoPhotos */,
 				B5BF0FD8136FCBE800C23233 /* Frameworks */,
 				B5BF0FD6136FCBE800C23233 /* Products */,
@@ -149,6 +168,8 @@
 		B5BF0FD8136FCBE800C23233 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B58E317C137B2E2A00F1F82E /* CoreLocation.framework */,
+				B5FEE302137833840006AF4A /* MapKit.framework */,
 				B5BF0FD9136FCBE800C23233 /* UIKit.framework */,
 				B5BF0FDB136FCBE800C23233 /* Foundation.framework */,
 				B5BF0FDD136FCBE800C23233 /* CoreGraphics.framework */,
@@ -214,6 +235,8 @@
 			children = (
 				B5B7024213753637004343A6 /* Photo.h */,
 				B5B7024313753637004343A6 /* Photo.m */,
+				B5B7024B1379C649004343A6 /* Constants.h */,
+				B5B7024C1379C649004343A6 /* Constants.m */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -221,6 +244,7 @@
 		B5FB56291372F552001F3260 /* Assets */ = {
 			isa = PBXGroup;
 			children = (
+				B58E317E137B329500F1F82E /* spinner360_frontal_72x72.png */,
 				B5FEE2F413782D870006AF4A /* popular.jpg */,
 				B5FEE2F113782D490006AF4A /* vienna.png */,
 				B54636DB1374A7870035B6E9 /* black-leather-texture.jpg */,
@@ -241,6 +265,7 @@
 		B5FEE2F71378328F0006AF4A /* Sections */ = {
 			isa = PBXGroup;
 			children = (
+				B58E3177137B27B500F1F82E /* Map */,
 				B57F7197137826CD00B80A59 /* PhotosViewController.h */,
 				B57F7198137826CD00B80A59 /* PhotosViewController.m */,
 				B57F7199137826CD00B80A59 /* PhotosViewController.xib */,
@@ -307,6 +332,7 @@
 				B5FEE2F213782D490006AF4A /* vienna.png in Resources */,
 				B5FEE2F513782D870006AF4A /* popular.jpg in Resources */,
 				B5FEE301137832D80006AF4A /* MapViewController.xib in Resources */,
+				B58E317F137B329500F1F82E /* spinner360_frontal_72x72.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +360,8 @@
 				B57F719A137826CD00B80A59 /* PhotosViewController.m in Sources */,
 				B5FEE300137832D80006AF4A /* MapViewController.m in Sources */,
 				B5A676B313783FDA00803142 /* LomoApi.m in Sources */,
+				B5B7024D1379C649004343A6 /* Constants.m in Sources */,
+				B58E317B137B27CA00F1F82E /* MapAnnotation.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

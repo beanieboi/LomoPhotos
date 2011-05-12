@@ -10,7 +10,11 @@
 #import <MapKit/MapKit.h>
 
 @interface MapViewController : UIViewController<MKMapViewDelegate> {
-    MKMapView *mapView;
+    NSMutableData   *responseData;
+    NSMutableArray  *photoList;
+    BOOL            didZoomToUser;
 }
+
+@property (readwrite) BOOL didZoomToUser;
 
 @end

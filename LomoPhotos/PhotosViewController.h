@@ -10,9 +10,8 @@
 #import "FullImageView.h"
 
 @interface PhotosViewController : UIViewController {
-    NSMutableArray  *photoTitles;         // Titles of images
     UIImageView     *fullsizeImage;
-    NSMutableArray  *photoList; // URL to larger image
+    NSMutableArray  *photoList;
     NSMutableData   *responseData;
     NSNumber        *currentPhoto;
     FullImageView   *fullImageView;
