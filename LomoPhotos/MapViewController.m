@@ -51,7 +51,7 @@
     NSNumber* longitude_north = [NSNumber numberWithFloat:region.center.longitude + region.span.longitudeDelta / 2];
     NSNumber* longitude_south = [NSNumber numberWithFloat:region.center.longitude - region.span.longitudeDelta / 2];
 
-    NSString *urlString = [NSString stringWithFormat:@"http://api.lomography.com/v1/photos/location/within/%f/%f/%f/%f/popular.json?api_key=%@",
+    NSString *urlString = [NSString stringWithFormat:@"http://api.lomography.com/v1/location/within/%f/%f/%f/%f/photos/popular.json?api_key=%@",
                                                         [latitude_west floatValue], [longitude_north floatValue], [latitude_east floatValue], [longitude_south floatValue],  LomoApiKey];
 
     // Create NSURL string from formatted string
