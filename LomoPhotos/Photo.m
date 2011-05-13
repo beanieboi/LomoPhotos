@@ -25,10 +25,12 @@
         self.imageLoaded = false;
         self.imageData = [[NSMutableData data] retain];
 
-        NSString *stringLatitude = [[json objectForKey:@"location"] objectForKey:@"latitude"];
-        NSString *stringLongitude = [[json objectForKey:@"location"] objectForKey:@"longitude"];
+        if ([json objectForKey:@"location"] != [NSNull null]) {
 
-        self.coordinate = [[CLLocation alloc] initWithLatitude:[stringLatitude doubleValue] longitude:[stringLongitude doubleValue]];
+            NSString *stringLatitude = [[json objectForKey:@"location"] objectForKey:@"latitude"];
+            NSString *stringLongitude = [[json objectForKey:@"location"] objectForKey:@"longitude"];
+            self.coordinate = [[CLLocation alloc] initWithLatitude:[stringLatitude doubleValue] longitude:[stringLongitude doubleValue]];
+        }
     }
     return self;  
 }
