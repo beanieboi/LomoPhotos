@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "FullImageView.h"
 
-@interface PhotosViewController : UIViewController {
+@interface PhotosViewController : UIViewController <UIScrollViewDelegate> {
     UIImageView     *fullsizeImage;
     NSMutableArray  *photoList;
     NSMutableData   *responseData;

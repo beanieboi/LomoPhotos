@@ -9,8 +9,8 @@
 #import <UIKit/UIKit.h>
 #import "Photo.h"
 
-@interface FullImageView : UIView {
-    UIImageView *fullsizeImage;
+@interface FullImageView : UIScrollView {
+    UIImageView *imageView;
 }
 
 - (void)slideViewOffScreenRight;

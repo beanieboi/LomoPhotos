@@ -48,6 +48,29 @@
     [UIView commitAnimations];
 }
 
+- (void)handleRotation:(UIRotationGestureRecognizer *)recognizer  {
+    /* Get the rotation angle in degrees */
+    float RotationinDegrees = recognizer.rotation * (180/M_PI);
+
+    if (RotationinDegrees > 50.0) {
+        [UIView beginAnimations:nil context:nil];
+        [UIView setAnimationDuration:0.5];
+        //[self ]
+        self.transform = CGAffineTransformMakeRotation(M_PI/2);
+        self.transform = CGAffineTransformMakeRotation(M_PI/2);
+        [UIView commitAnimations];
+        NSLog(@"RotationinDegrees %f", RotationinDegrees);
+    } else if (RotationinDegrees < -50.0) {
+        [UIView beginAnimations:nil context:nil];
+        [UIView setAnimationDuration:0.5];
+        //[self ]
+        self.transform = CGAffineTransformMakeRotation(-M_PI/2);
+        self.transform = CGAffineTransformMakeRotation(-M_PI/2);
+        [UIView commitAnimations];
+        NSLog(@"RotationinDegrees %f", RotationinDegrees);
+    }
+}
+
 #pragma mark -
 #pragma mark Initialization
 
@@ -57,12 +80,20 @@
         self.frame = CGRectMake(1024, 0, 1024, 768);
 
         // Setup image
-        fullsizeImage = [[UIImageView alloc] initWithImage:[UIImage imageWithData:[photo imageDataOrLoad]]];
+        imageView = [[UIImageView alloc] initWithImage:
+                                        [UIImage imageWithData:[photo imageDataOrLoad]]];
 
-        [fullsizeImage setFrame:[[UIScreen mainScreen] bounds]];
-        fullsizeImage.userInteractionEnabled = YES;
+        [imageView setFrame:[[UIScreen mainScreen] bounds]];
+        imageView.userInteractionEnabled = YES;
 
-        [self addSubview:fullsizeImage];
+        UIRotationGestureRecognizer *recognizer = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(handleRotation:)];
+        [imageView addGestureRecognizer:recognizer];
+        [recognizer release];
+        self.alwaysBounceHorizontal = YES;
+        self.contentSize = self.frame.size;
+        [self addSubview:imageView];
+        NSLog(@"contentSize %f", self.contentSize.width);
+
     }
     return self;  
 }
@@ -71,7 +102,7 @@
 #pragma mark Cleanup
 
 - (void)dealloc {
-    [fullsizeImage release];
+    [imageView release];
     [super dealloc];
 }
 

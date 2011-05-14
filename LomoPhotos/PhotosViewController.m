@@ -59,8 +59,12 @@
 
 #pragma mark - Image handling
 - (void)nextImage {
+    
+    NSLog(@"currentPhoto %d", currentPhoto);
     int value = [currentPhoto intValue];
     currentPhoto = [NSNumber numberWithInt:value + 1];
+    NSLog(@"currentPhoto %d", currentPhoto);
+
     [self performSelector:@selector(showZoomedImage:) withObject:[NSArray arrayWithObjects:currentPhoto, @"right", nil] afterDelay:0.1];
 }
 
@@ -81,10 +85,12 @@
         [fullImageView removeFromSuperview];
     
     fullImageView = [[FullImageView alloc] initWithPhoto:[photoList objectAtIndex:[index integerValue]]];
+    fullImageView.delegate  = self;
     [self.view addSubview:fullImageView];
-    
+
+    //[fullImageView ]
     // Slide this view off screen
-    
+
     // Slide the image to its new location (onscreen)
     if ([direction isEqualToString:@"right"]) {
         NSLog(@"FromRight");
@@ -107,17 +113,19 @@
     [UIView commitAnimations];
 }
 
-#pragma mark - Swipe
-- (void)handleLeftSwipeFrom:(UISwipeGestureRecognizer *)recognizer {
-    [fullImageView slideViewOffScreenLeft];
-    [self nextImage];
-    NSLog(@"left");
-}
-
-- (void)handleRightSwipeFrom:(UISwipeGestureRecognizer *)recognizer {
-    [fullImageView slideViewOffScreenRight];
-    [self prevImage];
-    NSLog(@"right");
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    
+    if (scrollView.contentOffset.x > 150) {
+        NSLog(@"NEXT");
+        [fullImageView slideViewOffScreenLeft];
+        [self nextImage];
+        NSLog(@"left");
+    } else if (scrollView.contentOffset.x < -150) {
+        NSLog(@"PREV");
+        [fullImageView slideViewOffScreenRight];
+        [self prevImage];
+        NSLog(@"right");
+    }
 }
 
 #pragma mark - Init
@@ -147,20 +155,20 @@
 
 - (void)viewDidLoad
 {
-    [[self currentPhoto] initWithInt:-1];
+    [[self currentPhoto] initWithInt:0];
     photoList = [[NSMutableArray alloc] init];
     
-    UISwipeGestureRecognizer *recognizerLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self
-                                                                                         action:@selector(handleLeftSwipeFrom:)];
-    [recognizerLeft setDirection:(UISwipeGestureRecognizerDirectionLeft)];
-    [self.view addGestureRecognizer:recognizerLeft];
-    [recognizerLeft release];
+    //UISwipeGestureRecognizer *recognizerLeft = [[UISwipeGestureRecognizer alloc] initWithTarget:self
+    //                                                                                     action:@selector(handleLeftSwipeFrom:)];
+    //[recognizerLeft setDirection:(UISwipeGestureRecognizerDirectionLeft)];
+    //[self.view addGestureRecognizer:recognizerLeft];
+    //[recognizerLeft release];
     
-    UISwipeGestureRecognizer *recognizerRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self
-                                                                                          action:@selector(handleRightSwipeFrom:)];
-    [recognizerRight setDirection:(UISwipeGestureRecognizerDirectionRight)];
-    [self.view addGestureRecognizer:recognizerRight];
-    [recognizerRight release];
+    //UISwipeGestureRecognizer *recognizerRight = [[UISwipeGestureRecognizer alloc] initWithTarget:self
+    //                                                                                      action:@selector(handleRightSwipeFrom:)];
+    //[recognizerRight setDirection:(UISwipeGestureRecognizerDirectionRight)];
+    //[self.view addGestureRecognizer:recognizerRight];
+    //[recognizerRight release];
     
     [self loadPopularPhotos];
     [super viewDidLoad];
