@@ -9,7 +9,6 @@
 #import "MapViewController.h"
 #import <MapKit/MapKit.h>
 #import "Photo.h"
-#import "JSON.h"
 #import "Constants.h"
 #import "MapAnnotation.h"
 
@@ -28,10 +27,6 @@
     return self;
 }
 
-- (void)dealloc
-{
-    [super dealloc];
-}
 
 - (void)didReceiveMemoryWarning
 {
@@ -59,11 +54,9 @@
     
     NSLog(@"loading %@", urlString);
     // Setup and start async download
-    responseData = [[NSMutableData data] retain];
+    responseData = [NSMutableData data];
     NSURLRequest *request = [[NSURLRequest alloc] initWithURL: url];
     NSURLConnection *connection = [[NSURLConnection alloc] initWithRequest:request delegate:self];
-    [connection release];
-    [request release];
 }
 
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response {
@@ -79,19 +72,18 @@
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
-	NSString *responseString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
-	[responseData release];
-
-    NSDictionary *results = [responseString JSONValue];
-    NSArray *photos = [results objectForKey:@"photos"];
+    NSError *err;
+    NSJSONSerialization *json = [NSJSONSerialization JSONObjectWithData:responseData
+                                                                options:NSJSONReadingMutableLeaves error:&err];
     
+    NSArray *photos = [json valueForKey:@"photos"];
     for (NSDictionary *photo in photos) {
         
         Photo *_photo = [[Photo alloc] initWithJSON:photo];
         [photoList addObject:_photo];
         
         MapAnnotation* annotation = [[MapAnnotation alloc] initWithPhoto:_photo];
-        [[self view] addAnnotation:annotation];
+        //[[self view] addAnnotation:annotation];
     }
 
     NSLog(@"photos %d", [photoList count]);

@@ -88,7 +88,6 @@
 
         UIRotationGestureRecognizer *recognizer = [[UIRotationGestureRecognizer alloc] initWithTarget:self action:@selector(handleRotation:)];
         [imageView addGestureRecognizer:recognizer];
-        [recognizer release];
         self.alwaysBounceHorizontal = YES;
         self.contentSize = self.frame.size;
         [self addSubview:imageView];
@@ -101,9 +100,5 @@
 #pragma mark -
 #pragma mark Cleanup
 
-- (void)dealloc {
-    [imageView release];
-    [super dealloc];
-}
 
 @end

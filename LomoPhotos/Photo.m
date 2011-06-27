@@ -23,7 +23,7 @@
     if (self = [super init]) {
         self.url = [[[json objectForKey:@"assets"] objectForKey:@"large"] objectForKey:@"url"];
         self.imageLoaded = false;
-        self.imageData = [[NSMutableData data] retain];
+        self.imageData = [NSMutableData data];
 
         if ([json objectForKey:@"location"] != [NSNull null]) {
 
@@ -59,6 +59,5 @@
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {
 	//NSString *responseString = [[NSString alloc] initWithData:imageData encoding:NSUTF8StringEncoding];
-	[imageData release];
 }
 @end

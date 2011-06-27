@@ -26,15 +26,6 @@
 		B5BF0FED136FCBE800C23233 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5BF0FEB136FCBE800C23233 /* MainWindow.xib */; };
 		B5BF0FF0136FCBE800C23233 /* LomoPhotosViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B5BF0FEF136FCBE800C23233 /* LomoPhotosViewController.m */; };
 		B5BF0FF3136FCBE800C23233 /* LomoPhotosViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B5BF0FF1136FCBE800C23233 /* LomoPhotosViewController.xib */; };
-		B5DF08EE136FE157001B340D /* NSObject+JSON.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DF08DD136FE157001B340D /* NSObject+JSON.m */; };
-		B5DF08EF136FE157001B340D /* SBJsonParser.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DF08DF136FE157001B340D /* SBJsonParser.m */; };
-		B5DF08F0136FE157001B340D /* SBJsonStreamParser.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DF08E1136FE157001B340D /* SBJsonStreamParser.m */; };
-		B5DF08F1136FE157001B340D /* SBJsonStreamParserAdapter.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DF08E3136FE157001B340D /* SBJsonStreamParserAdapter.m */; };
-		B5DF08F2136FE157001B340D /* SBJsonStreamParserState.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DF08E5136FE157001B340D /* SBJsonStreamParserState.m */; };
-		B5DF08F3136FE157001B340D /* SBJsonStreamWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DF08E7136FE157001B340D /* SBJsonStreamWriter.m */; };
-		B5DF08F4136FE157001B340D /* SBJsonStreamWriterState.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DF08E9136FE157001B340D /* SBJsonStreamWriterState.m */; };
-		B5DF08F5136FE157001B340D /* SBJsonTokeniser.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DF08EB136FE157001B340D /* SBJsonTokeniser.m */; };
-		B5DF08F6136FE157001B340D /* SBJsonWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = B5DF08ED136FE157001B340D /* SBJsonWriter.m */; };
 		B5FB562C1372F5E9001F3260 /* gray-leather-texture.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B5FB562B1372F5E9001F3260 /* gray-leather-texture.jpg */; };
 		B5FEE2F213782D490006AF4A /* vienna.png in Resources */ = {isa = PBXBuildFile; fileRef = B5FEE2F113782D490006AF4A /* vienna.png */; };
 		B5FEE2F513782D870006AF4A /* popular.jpg in Resources */ = {isa = PBXBuildFile; fileRef = B5FEE2F413782D870006AF4A /* popular.jpg */; };
@@ -74,25 +65,6 @@
 		B5BF0FEE136FCBE800C23233 /* LomoPhotosViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LomoPhotosViewController.h; sourceTree = "<group>"; };
 		B5BF0FEF136FCBE800C23233 /* LomoPhotosViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LomoPhotosViewController.m; sourceTree = "<group>"; };
 		B5BF0FF2136FCBE800C23233 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/LomoPhotosViewController.xib; sourceTree = "<group>"; };
-		B5DF08DB136FE157001B340D /* JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JSON.h; sourceTree = "<group>"; };
-		B5DF08DC136FE157001B340D /* NSObject+JSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSObject+JSON.h"; sourceTree = "<group>"; };
-		B5DF08DD136FE157001B340D /* NSObject+JSON.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSObject+JSON.m"; sourceTree = "<group>"; };
-		B5DF08DE136FE157001B340D /* SBJsonParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonParser.h; sourceTree = "<group>"; };
-		B5DF08DF136FE157001B340D /* SBJsonParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonParser.m; sourceTree = "<group>"; };
-		B5DF08E0136FE157001B340D /* SBJsonStreamParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParser.h; sourceTree = "<group>"; };
-		B5DF08E1136FE157001B340D /* SBJsonStreamParser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParser.m; sourceTree = "<group>"; };
-		B5DF08E2136FE157001B340D /* SBJsonStreamParserAdapter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserAdapter.h; sourceTree = "<group>"; };
-		B5DF08E3136FE157001B340D /* SBJsonStreamParserAdapter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserAdapter.m; sourceTree = "<group>"; };
-		B5DF08E4136FE157001B340D /* SBJsonStreamParserState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamParserState.h; sourceTree = "<group>"; };
-		B5DF08E5136FE157001B340D /* SBJsonStreamParserState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamParserState.m; sourceTree = "<group>"; };
-		B5DF08E6136FE157001B340D /* SBJsonStreamWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriter.h; sourceTree = "<group>"; };
-		B5DF08E7136FE157001B340D /* SBJsonStreamWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriter.m; sourceTree = "<group>"; };
-		B5DF08E8136FE157001B340D /* SBJsonStreamWriterState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonStreamWriterState.h; sourceTree = "<group>"; };
-		B5DF08E9136FE157001B340D /* SBJsonStreamWriterState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonStreamWriterState.m; sourceTree = "<group>"; };
-		B5DF08EA136FE157001B340D /* SBJsonTokeniser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonTokeniser.h; sourceTree = "<group>"; };
-		B5DF08EB136FE157001B340D /* SBJsonTokeniser.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonTokeniser.m; sourceTree = "<group>"; };
-		B5DF08EC136FE157001B340D /* SBJsonWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SBJsonWriter.h; sourceTree = "<group>"; };
-		B5DF08ED136FE157001B340D /* SBJsonWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SBJsonWriter.m; sourceTree = "<group>"; };
 		B5FB562B1372F5E9001F3260 /* gray-leather-texture.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "gray-leather-texture.jpg"; sourceTree = "<group>"; };
 		B5FEE2F113782D490006AF4A /* vienna.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = vienna.png; sourceTree = "<group>"; };
 		B5FEE2F413782D870006AF4A /* popular.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = popular.jpg; sourceTree = "<group>"; };
@@ -184,7 +156,6 @@
 				B57F718E1378265F00B80A59 /* Views */,
 				B5FB56291372F552001F3260 /* Assets */,
 				B5DF08F7136FE160001B340D /* Classes */,
-				B5DF08D9136FE14C001B340D /* JSON */,
 				B5BF0FE8136FCBE800C23233 /* LomoPhotosAppDelegate.h */,
 				B5BF0FE9136FCBE800C23233 /* LomoPhotosAppDelegate.m */,
 				B5BF0FEB136FCBE800C23233 /* MainWindow.xib */,
@@ -202,32 +173,6 @@
 				B5BF0FE6136FCBE800C23233 /* main.m */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		B5DF08D9136FE14C001B340D /* JSON */ = {
-			isa = PBXGroup;
-			children = (
-				B5DF08DB136FE157001B340D /* JSON.h */,
-				B5DF08DC136FE157001B340D /* NSObject+JSON.h */,
-				B5DF08DD136FE157001B340D /* NSObject+JSON.m */,
-				B5DF08DE136FE157001B340D /* SBJsonParser.h */,
-				B5DF08DF136FE157001B340D /* SBJsonParser.m */,
-				B5DF08E0136FE157001B340D /* SBJsonStreamParser.h */,
-				B5DF08E1136FE157001B340D /* SBJsonStreamParser.m */,
-				B5DF08E2136FE157001B340D /* SBJsonStreamParserAdapter.h */,
-				B5DF08E3136FE157001B340D /* SBJsonStreamParserAdapter.m */,
-				B5DF08E4136FE157001B340D /* SBJsonStreamParserState.h */,
-				B5DF08E5136FE157001B340D /* SBJsonStreamParserState.m */,
-				B5DF08E6136FE157001B340D /* SBJsonStreamWriter.h */,
-				B5DF08E7136FE157001B340D /* SBJsonStreamWriter.m */,
-				B5DF08E8136FE157001B340D /* SBJsonStreamWriterState.h */,
-				B5DF08E9136FE157001B340D /* SBJsonStreamWriterState.m */,
-				B5DF08EA136FE157001B340D /* SBJsonTokeniser.h */,
-				B5DF08EB136FE157001B340D /* SBJsonTokeniser.m */,
-				B5DF08EC136FE157001B340D /* SBJsonWriter.h */,
-				B5DF08ED136FE157001B340D /* SBJsonWriter.m */,
-			);
-			name = JSON;
 			sourceTree = "<group>";
 		};
 		B5DF08F7136FE160001B340D /* Classes */ = {
@@ -346,15 +291,6 @@
 				B5BF0FE7136FCBE800C23233 /* main.m in Sources */,
 				B5BF0FEA136FCBE800C23233 /* LomoPhotosAppDelegate.m in Sources */,
 				B5BF0FF0136FCBE800C23233 /* LomoPhotosViewController.m in Sources */,
-				B5DF08EE136FE157001B340D /* NSObject+JSON.m in Sources */,
-				B5DF08EF136FE157001B340D /* SBJsonParser.m in Sources */,
-				B5DF08F0136FE157001B340D /* SBJsonStreamParser.m in Sources */,
-				B5DF08F1136FE157001B340D /* SBJsonStreamParserAdapter.m in Sources */,
-				B5DF08F2136FE157001B340D /* SBJsonStreamParserState.m in Sources */,
-				B5DF08F3136FE157001B340D /* SBJsonStreamWriter.m in Sources */,
-				B5DF08F4136FE157001B340D /* SBJsonStreamWriterState.m in Sources */,
-				B5DF08F5136FE157001B340D /* SBJsonTokeniser.m in Sources */,
-				B5DF08F6136FE157001B340D /* SBJsonWriter.m in Sources */,
 				B558FC5B1371A68F00A300D4 /* FullImageView.m in Sources */,
 				B5B7024413753637004343A6 /* Photo.m in Sources */,
 				B57F719A137826CD00B80A59 /* PhotosViewController.m in Sources */,
@@ -433,10 +369,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LomoPhotos/LomoPhotos-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "LomoPhotos/LomoPhotos-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
@@ -447,9 +385,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "LomoPhotos/LomoPhotos-Prefix.pch";
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = "LomoPhotos/LomoPhotos-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				VALIDATE_PRODUCT = YES;
